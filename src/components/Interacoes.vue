@@ -1,7 +1,7 @@
 <template lang="pug">
   .interacoes
     // Barra superior
-    header.row.justify-center
+    header.row.justify-center.fixed-top
       img.logo(src="~statics/logo-2.svg")
       q-btn.absolute-left(
         flat round
@@ -38,6 +38,36 @@
             span {{ interacao.curso }}
           q-card-main
             | {{ interacao.texto }}
+
+    // Filtros
+    .row.fixed-bottom
+      q-tabs.full-width(align="center" color="secondary")
+        q-tab(
+          default inverted
+          slot="title"
+          color="white"
+          label="UEMG"
+          name="tab-1"
+          icon="message"
+        )
+        q-tab(
+          inverted
+          slot="title"
+          color="white"
+          count="3"
+          label="Meu curso"
+          name="tab-2"
+          icon="message"
+        )
+        q-tab(
+          inverted
+          slot="title"
+          color="white"
+          count="5"
+          label="Minha sala"
+          name="tab-3"
+          icon="message"
+        )
 </template>
 
 <script>
@@ -46,6 +76,8 @@ import {
   QIcon,
   QCard,
   QCardTitle,
+  QTabs,
+  QTab,
   QCardMain,
   Dialog,
   Toast
@@ -57,6 +89,8 @@ export default {
     QIcon,
     QCard,
     QCardTitle,
+    QTabs,
+    QTab,
     QCardMain
   },
   data () {
@@ -109,10 +143,12 @@ export default {
 .interacoes
   background #eceff1
   min-height 100vh
+  padding 90px 0 70px
 
   > header
     background $primary
     height 80px
+    z-index 999
 
     > .logo
       width 130px
@@ -120,7 +156,7 @@ export default {
   > .items-list
     margin auto
     max-width 500px
-    padding 15px
+    padding 15px 15px
 
     .page-title
       font-family 'Patrick Hand SC'

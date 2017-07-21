@@ -1,7 +1,7 @@
 <template lang="pug">
   .tutoriais
     // Barra superior
-    header.row.justify-center
+    header.row.justify-center.fixed-top
       img.logo(src="~statics/logo-2.svg")
       q-btn.absolute-left(
         flat round
@@ -49,6 +49,36 @@
               )
                 q-icon(name="add_circle")
                 span &nbsp;Ver detalhes
+
+    // Filtros
+    .row.fixed-bottom
+      q-tabs.full-width(align="center" color="secondary")
+        q-tab(
+          default inverted
+          slot="title"
+          color="white"
+          label="UEMG"
+          name="tab-1"
+          icon="message"
+        )
+        q-tab(
+          inverted
+          slot="title"
+          color="white"
+          count="3"
+          label="Meu curso"
+          name="tab-2"
+          icon="message"
+        )
+        q-tab(
+          inverted
+          slot="title"
+          color="white"
+          count="5"
+          label="Minha sala"
+          name="tab-3"
+          icon="message"
+        )
 
     // Modal de visualização dos tutoriais
     q-modal(
@@ -110,6 +140,8 @@ import {
   QStep,
   QStepperNavigation,
   QModal,
+  QTabs,
+  QTab,
   Dialog,
   Toast
 } from 'quasar'
@@ -124,7 +156,9 @@ export default {
     QStepper,
     QStep,
     QStepperNavigation,
-    QModal
+    QModal,
+    QTabs,
+    QTab
   },
   data () {
     return {}
@@ -164,10 +198,12 @@ export default {
 .tutoriais
   background #eceff1
   min-height 100vh
+  padding 90px 0 70px
 
   > header
     background $primary
     height 80px
+    z-index 999
 
     > .logo
       width 130px
@@ -175,7 +211,7 @@ export default {
   > .items-list
     margin auto
     max-width 500px
-    padding 15px
+    padding 15px 15px
 
     .page-title
       font-family 'Patrick Hand SC'
