@@ -25,6 +25,8 @@ export default new VueRouter({
     { path: '/', redirect: 'login' },
     { path: '/cadastro', component: load('Cadastro') },
     { path: '/login', component: load('Login') },
+    { path: '/home', component: load('Home') },
+    { path: '/interacoes', component: load('Interacoes') },
 
     // Always leave this last one
     { path: '*', component: load('Error404') } // Not found

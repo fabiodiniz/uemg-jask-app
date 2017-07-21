@@ -5,24 +5,27 @@
     )
     q-card
       q-card-title.text-center Login
-      q-card-main.column.items-center
-        q-input.full-width(
-          v-model="ra"
-          float-label="RA"
-          color="primary"
-        )
-        q-input.full-width(
-          v-model="senha"
-          type="password"
-          float-label="Senha"
-          color="primary"
-        )
-        q-btn(
-          big
-          rounded
-          style="margin-top: 10px"
-          color="primary"
-        ) Login
+      q-card-main
+        form.column.items-center()
+          p Insira seus dados de acesso e conecte-se à comunidade acadêmica.
+          q-input.full-width(
+            v-model="ra"
+            float-label="RA"
+            color="primary"
+          )
+          q-input.full-width(
+            v-model="senha"
+            type="password"
+            float-label="Senha"
+            color="primary"
+          )
+          q-btn(
+            big
+            rounded
+            @click.native="$router.push('home')"
+            style="margin-top: 10px"
+            color="primary"
+          ) Login
     
     router-link.link-rodape(
       to="cadastro"
@@ -57,12 +60,12 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '~variables'
 
 .login
   background $secondary
-  height 100vh
+  min-height 100vh
   padding 20px
 
   > .logo
@@ -76,8 +79,19 @@ export default {
       background $primary
       color #FFF
 
+      .q-card-title
+        font-family 'Patrick Hand SC' !important
+        font-size 30px !important
+
     > .q-card-main
       padding 0 20px 20px
+
+      > form > p
+        color #90a4ae
+        font-size 16px
+        text-align center
+        margin 20px 0 0
+        line-height 1.31
   
   > a
     color #FFF
