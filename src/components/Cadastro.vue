@@ -95,7 +95,7 @@ export default {
         font-size 30px !important
 
     > .q-card-main
-      padding 0 20px 20px
+      padding 0 30px 20px
 
       > form > p
         color #90a4ae
