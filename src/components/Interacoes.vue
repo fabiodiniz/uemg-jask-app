@@ -105,6 +105,8 @@ export default {
       width 130px
 
   > .items-list
+    margin auto
+    max-width 500px
     padding 15px
 
     .page-title

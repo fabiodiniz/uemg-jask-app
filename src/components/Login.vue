@@ -76,6 +76,7 @@ export default {
 
   > .q-card
     background #FFF
+    max-width 400px
     width 100%
 
     > .q-card-primary

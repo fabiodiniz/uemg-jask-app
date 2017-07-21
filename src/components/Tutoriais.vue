@@ -56,45 +56,47 @@
       :content-css="{padding: '30px', background: '#eceff1'}"
       ref="modalTutorial"
     )
-      // Stepper
-      strong.block Como pagar as multas da biblioteca
-      span.block Enviado por Fábio Diniz
+      div(style="max-width: 500px; margin: auto")
+        // Stepper
+        strong.block Como pagar as multas da biblioteca
+        span.block Enviado por Fábio Diniz
 
-      q-stepper(
-        vertical
-        color="primary"
-        style="margin-top: 20px; background: #FFF"
-        ref="stepperTutorial"
-      )
-        q-step(
-          default
-          v-for="i in [1,2,3,4,5,6]"
-          :title="'Passo ' + i"
-          subtitle="Subtítulo"
-        ) Aqui vem a descrição de cada etapa do tutorial.
-          q-stepper-navigation
-            q-btn(
-              flat round
-              color="secondary"
-              icon="arrow_upward"
-              @click="$refs.stepperTutorial.previous()"
-            )
-            q-btn(
-              flat round
-              color="secondary"
-              icon="arrow_downward"
-              @click="$refs.stepperTutorial.next()"
-            )
-
-      // Fechar modal
-      .row.justify-center.full-width
-        q-btn(
+        q-stepper(
+          vertical
           color="primary"
-          style="margin-top: 20px"
-          @click="$refs.modalTutorial.close()"
-        ) 
-          q-icon(name="clear")
-          span &nbsp;Fechar tutorial
+          style="margin-top: 20px; background: #FFF"
+          ref="stepperTutorial"
+        )
+          q-step(
+            default
+            v-for="i in [1,2,3,4,5,6]"
+            :title="'Passo ' + i"
+            subtitle="Subtítulo"
+          ) Aqui vem a descrição de cada etapa do tutorial.
+            q-stepper-navigation
+              q-btn(
+                flat round
+                color="secondary"
+                icon="arrow_upward"
+                @click="$refs.stepperTutorial.previous()"
+              )
+              q-btn(
+                flat round
+                color="secondary"
+                icon="arrow_downward"
+                @click="$refs.stepperTutorial.next()"
+              )
+
+        // Fechar modal
+        .row.justify-center.full-width
+          q-btn(
+            rounded
+            color="primary"
+            style="margin-top: 20px"
+            @click="$refs.modalTutorial.close()"
+          ) 
+            q-icon(name="clear")
+            span &nbsp;Fechar tutorial
 </template>
 
 <script>
@@ -171,6 +173,8 @@ export default {
       width 130px
 
   > .items-list
+    margin auto
+    max-width 500px
     padding 15px
 
     .page-title

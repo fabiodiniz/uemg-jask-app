@@ -85,6 +85,7 @@ header
     
   .q-card
     background #FFF
+    max-width 400px
 
     .imagem, .descricao
       width 50%
