@@ -3,7 +3,7 @@
     img.logo(
       src="~statics/logo-1.svg"
     )
-    q-card
+    q-card.animate-scale
       q-card-title.text-center Login
       q-card-main
         form.column.items-center
@@ -24,7 +24,7 @@
             @click.native="$router.push('home')"
             style="margin-top: 10px"
             color="primary"
-          ) 
+          )
             q-icon(name="exit_to_app")
             span &nbsp;Login
     

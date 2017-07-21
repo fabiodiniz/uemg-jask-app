@@ -32,7 +32,7 @@
       
       // Cards de interações
       .column
-        q-card.card-interacao(v-for="tutorial in [1,2,3,4,5]")
+        q-card.card-interacao.animate-scale(v-for="tutorial in [1,2,3,4,5]")
           q-card-title
             strong Como pagar as multas da biblioteca
             span Enviado por Fábio Diniz

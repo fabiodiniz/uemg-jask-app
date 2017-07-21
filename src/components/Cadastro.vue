@@ -3,7 +3,7 @@
     img.logo(
       src="~statics/logo-1.svg"
     )
-    q-card
+    q-card.animate-scale
       q-card-title.text-center Cadastre-se
       q-card-main
         form.column.items-center

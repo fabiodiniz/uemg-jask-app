@@ -32,7 +32,7 @@
       
       // Cards de interações
       .column
-        q-card.card-interacao(v-for="i in [1,2,3,4,5]")
+        q-card.card-interacao.animate-scale(v-for="i in [1,2,3,4,5]")
           q-card-title
             strong Fábio Diniz
             span 7º período de Sistemas de Informação

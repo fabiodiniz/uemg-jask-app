@@ -24,7 +24,7 @@
       .info-card.row.justify-center
         .column.items-center(@click="$router.push('interacoes')")
           .title Interações
-          q-card
+          q-card.animate-scale
             .row
               .imagem.row.justify-center
                 img(src="~statics/interacoes-img.svg")
@@ -34,7 +34,7 @@
       .info-card.-bg-green.row.justify-center
         .column.items-center(@click="$router.push('tutoriais')")
           .title Tutoriais
-          q-card
+          q-card.animate-scale
             .row
               .imagem.row.justify-center
                 img(src="~statics/informacoes-img.svg")
