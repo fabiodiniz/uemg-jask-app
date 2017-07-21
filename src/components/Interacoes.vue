@@ -32,12 +32,12 @@
       
       // Cards de interações
       .column
-        q-card.card-interacao.animate-scale(v-for="i in [1,2,3,4,5]")
+        q-card.card-interacao.animate-scale(v-for="interacao in interacoes")
           q-card-title
-            strong Fábio Diniz
-            span 7º período de Sistemas de Informação
+            strong {{ interacao.nome }}
+            span {{ interacao.curso }}
           q-card-main
-            | Secondary line text Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam massa quam.
+            | {{ interacao.texto }}
 </template>
 
 <script>
@@ -60,10 +60,18 @@ export default {
     QCardMain
   },
   data () {
-    return {}
+    return {
+      interacoes: [{
+        'nome': 'Fábio Diniz',
+        'curso': '7º período de Sistemas de Informação',
+        'texto': 'Vem aí o I Startup Experience! Dias 28, 29 e 30 de Julho. Traga sua ideia e venha trabalhar nela conosco :)'
+      }]
+    }
   },
   methods: {
     addInteracao () {
+      let vue = this
+
       Dialog.create({
         title: 'Nova interação',
         message: `Digite sua mensagem para a comunidade acadêmica.
@@ -80,7 +88,12 @@ export default {
           {
             label: 'Publicar',
             handler (data) {
-              Toast.create('Returned ' + JSON.stringify(data))
+              vue.interacoes.unshift({
+                'nome': 'Fábio Diniz',
+                'curso': '7º período de Sistemas de Informação',
+                'texto': data.newInteracao
+              })
+              Toast.create.positive('Interação publicada :)')
             }
           }
         ]
