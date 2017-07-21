@@ -21,7 +21,7 @@
           )
           q-btn(
             rounded
-            @click.native="$router.push('home')"
+            @click.native.prevent="$router.push('home')"
             style="margin-top: 10px"
             color="primary"
           )
