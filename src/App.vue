@@ -12,4 +12,8 @@
 export default {}
 </script>
 
-<style></style>
+<style lang="stylus">
+// QCard
+.q-card
+  border-radius 4px
+</style>
