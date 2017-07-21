@@ -4,14 +4,14 @@
     header.row.justify-center
       img.logo(src="~statics/logo-2.svg")
       q-btn.absolute-left(
-        flat, round
+        flat round
         @click="$router.go(-1)"
         color="white"
         icon="arrow_back"
         style="margin-top: 10px; margin-left: 10px"
       )
       q-btn.absolute-right(
-        flat, round
+        flat round
         @click="$router.push('login')"
         color="white"
         icon="power_settings_new"
