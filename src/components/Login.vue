@@ -6,7 +6,7 @@
     q-card
       q-card-title.text-center Login
       q-card-main
-        form.column.items-center()
+        form.column.items-center
           p Insira seus dados de acesso e conecte-se à comunidade acadêmica.
           q-input.full-width(
             v-model="ra"
@@ -20,12 +20,13 @@
             color="primary"
           )
           q-btn(
-            big
             rounded
             @click.native="$router.push('home')"
             style="margin-top: 10px"
             color="primary"
-          ) Login
+          ) 
+            q-icon(name="exit_to_app")
+            span &nbsp;Login
     
     router-link.link-rodape(
       to="cadastro"
@@ -38,7 +39,8 @@ import {
   QCardTitle,
   QCardMain,
   QInput,
-  QBtn
+  QBtn,
+  QIcon
 } from 'quasar'
 
 export default {
@@ -47,7 +49,8 @@ export default {
     QCardTitle,
     QCardMain,
     QInput,
-    QBtn
+    QBtn,
+    QIcon
   },
   data () {
     return {

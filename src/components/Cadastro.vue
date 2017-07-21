@@ -31,7 +31,6 @@
             color="primary"
           )
           q-btn(
-            big
             rounded
             @click="$router.push('home')"
             style="margin-top: 10px"

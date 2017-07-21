@@ -1,30 +1,28 @@
 <template lang="pug">
   .home
+    // Barra superior
     header.row.justify-center
       img.logo(src="~statics/logo-2.svg")
       q-btn.absolute-left(
-        flat
-        round
+        flat, round
         @click="$router.go(-1)"
         color="white"
         icon="arrow_back"
-        style="margin-top: 10px; margin-right: 10px"
+        style="margin-top: 10px; margin-left: 10px"
       )
       q-btn.absolute-right(
-        flat
-        round
+        flat, round
         @click="$router.push('login')"
         color="white"
         icon="power_settings_new"
         style="margin-top: 10px; margin-right: 10px"
       )
     
+    // Conteúdo
     .column
       // Interações
-      .info-card.row.justify-center(
-        @click="$router.push('interacoes')"
-      )
-        .column.items-center
+      .info-card.row.justify-center
+        .column.items-center(@click="$router.push('interacoes')")
           .title Interações
           q-card
             .row
@@ -33,10 +31,8 @@
               .descricao Canal para debate entre discentes e docentes da universidade.
 
       // Tutoriais
-      .info-card.-bg-green.row.justify-center(
-        @click="$router.push('tutoriais')"
-      )
-        .column.items-center
+      .info-card.-bg-green.row.justify-center
+        .column.items-center(@click="$router.push('tutoriais')")
           .title Tutoriais
           q-card
             .row
